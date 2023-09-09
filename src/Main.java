@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        double ticketPrice = 13676;
-        int rublesPerMile = 20;
-        int miles = (int) (ticketPrice / rublesPerMile);
-        boolean hasDecimalPart = ticketPrice % rublesPerMile != 0;
-        if (hasDecimalPart) {
-            miles++;
+        double currentBalance = 100;
+        double depositAmount = 1100;
+        double minDepositAmount = 100;
+        int bonusAmount = 0;
+        boolean meetsMinimumDeposit = depositAmount >= minDepositAmount;
+        if (meetsMinimumDeposit) {
+            bonusAmount = (int) (depositAmount / minDepositAmount);
         }
-        System.out.println("Количество начисленных миль: " + miles);
+        double finalBalance = currentBalance + depositAmount + bonusAmount;
+        System.out.println("Итоговый счёт: " + finalBalance + " рублей");
+        System.out.println("Количество бонусных рублей: " + bonusAmount);
     }
 }
